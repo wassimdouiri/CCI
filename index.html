@@ -3,6 +3,10 @@
     <head>
         <title>météo</title>
         <meta charset="utf-8">
+        <script>
+            let  villecourante = "Paris";
+            function showCity() {alert (villecourante);}
+           </script>
         <style>
             h1 {
                 background-color: darkgray;
@@ -55,7 +59,7 @@
            }
         </style >
     </head>
-    <body>
+    <body onload="showCity()">
         <h1>Météo HTML </h1>
       <div class="flex">
         <div class="paris">
