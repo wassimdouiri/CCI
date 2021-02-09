@@ -1,95 +1,130 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <title>météo</title>
-        <meta charset="utf-8">
-        <script>
-            let  villecourante = "Paris";
-            function showCity() {alert (villecourante);}
-           </script>
-        <style>
-            h1 {
-                background-color: darkgray;
-                text-align: center;
-            }
-
-            h{
-            
-               
-                line-height:20px;
-                font-weight: bold;              
-            }
-               
-                
-            .paris{
-                line-height:0.5px;
-                margin: 8px;
-                border: 2px solid #333;
-                background-color: cornsilk;
-                width: 350px;
-                justify-content: space-evenly;
-                
-               
-            }
-            .Guinéé{
-                line-height:0.5px;
-                margin: 8px;
-                border: 2px solid #333;
-                background-color: cornsilk;
-                width: 350px;
-                
-                
-            }
-            .Tunisie{
-                line-height:0.5px;
-                margin: 8px;
-                border: 2px solid #333;
-                background-color: cornsilk;
-                width: 350px;
-             
-            }
-            .flex{
-                display: flex;
-                justify-content: space-evenly;
-                flex-wrap: wrap;
-            }
-
-           .footer{
-               background-color: cornsilk;
-           }
-        </style >
-    </head>
-    <body onload="showCity()">
-        <h1>Météo HTML </h1>
+   <head>
+      <title>météo</title>
+      <meta charset="utf-8">
+      <style>
+         h1 {
+         background-color: darkgray;
+         text-align: center;
+         }
+         h{
+         line-height:20px;
+         font-weight: bold;              
+         }
+         .Paris{
+         line-height:0.5px;
+         margin: 8px;
+         border: 2px solid #333;
+         background-color: cornsilk;
+         width: 350px;
+         justify-content: space-evenly;
+         }
+         .Guinéé{
+         line-height:0.5px;
+         margin: 8px;
+         border: 2px solid #333;
+         background-color: cornsilk;
+         width: 350px;
+         }
+         .Tunisie{
+         line-height:0.5px;
+         margin: 8px;
+         border: 2px solid #333;
+         background-color: cornsilk;
+         width: 350px;
+         }
+         .flex{
+         display: flex;
+         justify-content: space-evenly;
+         flex-wrap: wrap;
+         }
+         .footer{
+         background-color: cornsilk;
+         }
+      </style >
+   </head>
+   <body >
+      <h1>TP Météo HTML </h1>
+      <div>
+         <select  onchange="showCity()" name="City" id="City" >
+            <option value="">--Please choose an option--</option>
+            <option value="Paris">Paris</option>
+            <option value="Guinéé">La république de Guinée</option>
+            <option value="Tunisie">Tunisie</option>
+         </select>
+      </div>
       <div class="flex">
-        <div class="paris">
-            <h2>Paris</h2>  
-               <p>3°,pluvieux</p>
-               <p>Précipitation:2%</p>
-               <p>Vent:6km/h</p>
-               <img src="pluvie.png" alt="température à Paris"
-               width="100"
-               height="40">
-        </div>
-        <div class="Guinéé" >
-            <h2>La république de Guinée </h2>
-               <p>25°,Brouillard</p>
-               <p>Précipitations:2%</p>
-               <p>Vent:11km/h</p>
-               <img src="broulliard.png" alt="température en Guinée"
-               width="100"
-               height="40">
-        </div>
-        <div class="Tunisie" >
-            <h2>Tunisie </h2>
-               <p>14°,Partiellement couvert</p>
-               <p>Précipitations:1%</p>
-               <p>Vent:21km/h</p>
-               <img src="couver.png" alt="température à Tunis"
-               width="100"
-               height="40">
+         <div class="City" >
+            <div id="Parisbox" style="visibility:hidden;">
+               <div class="Paris">
+                  <h2>Paris</h2>
+                  <p>3°,pluvieux</p>
+                  <p>Précipitation:2%</p>
+                  <p>Vent:6km/h</p>
+                  <img src="pluvie.png" alt="température à Paris"
+                     width="100"
+                     height="40">
+               </div>
             </div>
+         </div>
+         <div class="City">
+            <div id="Guinéébox" style="visibility:hidden;">
+               <div class="Guinéé" >
+                  <h2>La république de Guinée </h2>
+                  <p>25°,Brouillard</p>
+                  <p>Précipitations:2%</p>
+                  <p>Vent:11km/h</p>
+                  <img src="broulliard.png" alt="température en Guinée"
+                     width="100"
+                     height="40">
+               </div>
             </div>
-            <footer>DOUIRI Wassim<br>Icones météo par<a href ="https://thenounproject.com/search/collection/?q=weather"> NockFulloption</a> </footer>
-    </body>
+         </div>
+         <div class="City">
+            <div id="Tunisiebox" style="visibility:hidden;">
+               <div class="Tunisie">
+                  <h2>Tunisie </h2>
+                  <p>14°,Partiellement couvert</p>
+                  <p>Précipitations:1%</p>
+                  <p>Vent:21km/h</p>
+                  <img src="couver.png" alt="température à Tunis"
+                     width="100"
+                     height="40">
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer>DOUIRI Wassim<br>Icones météo par<a href ="https://thenounproject.com/search/collection/?q=weather"> NockFulloption</a> </footer>
+   </body>
+   <script type = "text/javascript">
+      var Paris = document.getElementById("Parisbox");
+               var Guinéé = document.getElementById("Guinéébox");
+               var Tunisie = document.getElementById("Tunisiebox");
+             
+          function showCity(){
+      
+          
+      var element = document.getElementById("City").value;
+             if ( element=="Tunisie"){
+             Paris.style.visibility = "hidden";
+                   Tunisie.style.visibility = "visible";
+                   Guinéé.style.visibility = "hidden";
+       
+          }
+      
+         else if ( element=="Guinéé"){
+             Paris.style.visibility = "hidden";
+                   Tunisie.style.visibility = "hidden";
+                   Guinéé.style.visibility = "visible";
+      }
+      else if  ( element=="Paris"){
+             Paris.style.visibility = "visible";
+                   Tunisie.style.visibility = "hidden";
+                   Guinéé.style.visibility = "hidden";
+      }
+      }
+      
+         
+   </script>
 </html>
