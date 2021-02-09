@@ -24,7 +24,7 @@ Paris.style.visibility = "visible";
     Tunisie.style.visibility = "hidden";
     Guinéé.style.visibility = "hidden";
 }
-else if  ( element=="selectionner"){
+else if  ( element=="choose"){
     Paris.style.visibility = "hidden";
         Tunisie.style.visibility = "hidden";
         Guinéé.style.visibility = "hidden";
